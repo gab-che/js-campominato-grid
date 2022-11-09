@@ -21,6 +21,11 @@ function createGrid(difficultyValue){
         const newCell = document.createElement("div");
         newCell.classList.add("grid_cell");
         newCell.style.width = `calc(100% / ${Math.sqrt(difficultyValue)})`;
+        newCell.innerHTML = i + 1;
+
+        newCell.addEventListener("click", function(){
+            this.classList.toggle("bg-info");
+        })
         gridContainer.append(newCell);
     }
 }
