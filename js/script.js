@@ -30,3 +30,11 @@ function createGrid(totalCells){
         gridContainer.append(newCell);
     }
 }
+
+const reset = document.getElementById("reset");
+reset.addEventListener("click", function(){
+    const emptyCell = document.querySelectorAll(".grid_cell");
+    emptyCell.forEach(grid_cell =>{
+        grid_cell.classList.remove("bg-info");
+    })
+})
