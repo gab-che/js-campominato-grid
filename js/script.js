@@ -9,23 +9,24 @@ gridGenerator.addEventListener("click", function(){
 })
 
 /**
- * @param {number} difficultyValue 100, 81 o 49
- * @return {}
+ * @param {number} totalCells 100, 81 o 49
  * Genera una griglia di 100, 81 o 49 caselle in un quadrato perfetto 
  */
-function createGrid(difficultyValue){
+function createGrid(totalCells){
     const gridContainer = document.querySelector(".grid_container");
     gridContainer.innerHTML = "";
     
-    for (i = 0; i < difficultyValue; i++){
+    for (i = 0; i < totalCells; i++){
         const newCell = document.createElement("div");
         newCell.classList.add("grid_cell");
-        newCell.style.width = `calc(100% / ${Math.sqrt(difficultyValue)})`;
+        newCell.style.width = `calc(100% / ${Math.sqrt(totalCells)})`;
         newCell.innerHTML = i + 1;
 
         newCell.addEventListener("click", function(){
             this.classList.toggle("bg-info");
+            console.log(this.textContent);
         })
+
         gridContainer.append(newCell);
     }
 }
